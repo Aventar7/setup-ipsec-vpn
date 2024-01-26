@@ -75,14 +75,14 @@ check_os() {
     fi
     [ -f /etc/oracle-release ] && os_type=ol
     grep -qi rocky "$rh_file" && os_type=rocky
-    grep -qi alma "$rh_file" && os_type=alma
-    if grep -q "release 7" "$rh_file"; then
-      os_ver=7
-    elif grep -q "release 8" "$rh_file"; then
-      os_ver=8
-      grep -qi stream "$rh_file" && os_ver=8s
-      if [ "$os_type$os_ver" = "centos8" ]; then
-        exiterr "CentOS Linux 8 is EOL and not supported."
+    #grep -qi alma "$rh_file" && os_type=alma
+    #if grep -q "release 7" "$rh_file"; then
+     # os_ver=7
+    #elif grep -q "release 8" "$rh_file"; then
+     # os_ver=8
+     # grep -qi stream "$rh_file" && os_ver=8s
+      #if [ "$os_type$os_ver" = "centos8" ]; then
+       # exiterr "CentOS Linux 8 is EOL and not supported."
       fi
     elif grep -q "release 9" "$rh_file"; then
       os_ver=9
